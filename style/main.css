@@ -195,3 +195,12 @@
     margin-right: auto;
  }
 
+[class*='club_'] {
+    background-color: #2e2e2e;
+ 	position: absolute;
+}
+
+.top {
+	margin-top: 10px;
+}
+

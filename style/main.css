@@ -147,6 +147,7 @@
  }
 
  #radar_1 {
+ 	position: relative;
  	border-radius: 250px;
  	width: 250px;
  	height: 250px;
@@ -193,5 +194,13 @@
  	margin-top: 25px;
  	margin-left: auto;
     margin-right: auto;
+ }
+
+ .clubCircle {
+ 	position:absolute;
+ 	background:#000;
+ 	border-radius:100%;
+ 	width:20px;
+ 	height:20px;
  }
 

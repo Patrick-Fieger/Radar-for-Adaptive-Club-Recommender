@@ -7,10 +7,12 @@
 </head>
 <body>
 
-<div id="wrapper">
+<div id="wrapper" ng-controller="AppCtrl">
 
-	<div id="radar_1" ng-controller="AppCtrl">
-		<div ng-repeat="club in result.clubs" id="{{club._id}}" class="clubCircle" style="top:{{club.position[0]*250}}px;left:{{club.position[1]*250}}px">{{club.name}}</div>
+	<div id="radar_1">
+		<div ng-repeat="club in result.clubs" id="{{club._id}}" class="clubCircle" ng-style="{top: club.position[0]*250, left: club.position[1]*250, width: club.size*30, height: club.size*30}">
+			{{club.name}} <!-- FIXME: Hier sollte ein geeigneter Aufbau und der Inhalt für ein Tooltip stehen. Neben .name stehen die informationen genre & imagePath zur Verfügung -->
+		</div> 
 
 		<div id="radar_2">
 			<div id="radar_3">
@@ -21,9 +23,9 @@
 		</div>
 	</div>
 
-	<div class="col-4"><a href="#" class="button_small">f</a></div>
-	<div class="col-4">5 Clubs</div>
-	<div class="col-4"><a href="#" class="button_small">g</a></div>
+	<div class="col-4" ng-visible=""><a href="#" class="button_small">f</a></div>
+	<div class="col-4">{{result.amount}} Clubs</div>
+	<div class="col-4"><a href="#" class="button_small" ng-show="!result.isMax">g</a></div>
 	<hr>
 	<div class="col-4"><a href="#" class="button">h</a></div>
 	<div class="col-4"><a href="#" class="button">b</a></div>

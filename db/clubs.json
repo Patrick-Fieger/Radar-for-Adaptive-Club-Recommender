@@ -9,7 +9,7 @@
             "genre":"electro",
             "imagePath":"img/testclub.jpg",
             "position":[0.3,0.8],
-            "size":0.3
+            "size":0.4
         },
         {
             "_id":"2760abfe9962d350a3bf2247d3cfef67",
@@ -32,7 +32,7 @@
             "name":"Robert Jonson",
             "genre":"electro",
             "imagePath":"img/testclub.jpg",
-            "position":[0.76,0.8],
+            "position":[0.76,0.2],
             "size":1
         },
         {
@@ -41,7 +41,7 @@
             "genre":"electro",
             "imagePath":"img/testclub.jpg",
             "position":[0.3,0.334],
-            "size":0.1
+            "size":0.3
         },
         {
             "_id":"f99eb1abb22fdad8fe016560d35d334b",

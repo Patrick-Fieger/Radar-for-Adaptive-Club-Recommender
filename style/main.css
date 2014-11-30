@@ -200,7 +200,6 @@
  	position:absolute;
  	background:#000;
  	border-radius:100%;
- 	width:20px;
- 	height:20px;
+ 	opacity:0.75;
  }
 

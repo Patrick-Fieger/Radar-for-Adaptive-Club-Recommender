@@ -147,10 +147,7 @@
  }
 
  #radar_1 {
-<<<<<<< HEAD
-=======
  	position: relative;
->>>>>>> FETCH_HEAD
  	border-radius: 250px;
  	width: 250px;
  	height: 250px;
@@ -199,21 +196,19 @@
     margin-right: auto;
  }
 
-<<<<<<< HEAD
-[class*='club_'] {
+/*[class*='club_'] {
     background-color: #2e2e2e;
  	position: absolute;
 }
 
 .top {
 	margin-top: 10px;
-}
-=======
+}*/
+
  .clubCircle {
  	position:absolute;
  	background:#000;
  	border-radius:100%;
  	opacity:0.75;
  }
->>>>>>> FETCH_HEAD
 

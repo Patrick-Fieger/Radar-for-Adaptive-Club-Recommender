@@ -19,10 +19,18 @@ app.controller('AppCtrl', function($scope, $http) {
 
 if (window.DeviceOrientationEvent) {
     window.addEventListener("deviceorientation", function (e) {
-		rotate(360 - e.alpha);
+        rotate(360 - e.alpha);
     }, false);
 }
 
 function rotate(deg){
 	$('#radar_1').css('transform', 'rotate(' + deg + 'deg)');
+}
+
+if(navigator.geolocation){
+    navigator.geolocation.getCurrentPosition(getPos);
+}
+
+function getPos(position){
+    console.log(position)
 }

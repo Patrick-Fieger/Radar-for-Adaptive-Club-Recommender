@@ -23,9 +23,9 @@
 		</div>
 	</div>
 
-	<div class="col-4" ng-visible=""><a href="#" class="button_small">f</a></div>
+	<div class="col-4" ng-visible=""><a href="#" class="button_small" ng-click="zoomIn()">f</a></div>
 	<div class="col-4">{{result.amount}} Clubs</div>
-	<div class="col-4"><a href="#" class="button_small" ng-show="!result.isMax">g</a></div>
+	<div class="col-4"><a href="#" class="button_small" ng-show="!result.isMax" ng-click="zoomOut()">g</a></div>
 	<hr>
 	<div class="col-4"><a href="#" class="button">h</a></div>
 	<div class="col-4"><a href="#" class="button">b</a></div>

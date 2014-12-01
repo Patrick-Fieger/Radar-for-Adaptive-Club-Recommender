@@ -61,7 +61,7 @@ function debug(content) {
 
 if (window.DeviceOrientationEvent) {
     window.addEventListener("deviceorientation", function (e) {
-        rotate(360 - e.alpha);
+        rotate(e.alpha);
         if(e.alpha != 0) isMobil = true;
     }, false);
 }

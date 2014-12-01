@@ -16,3 +16,13 @@ app.controller('AppCtrl', function($scope, $http) {
     }
     $scope.getData(true);
 });
+
+if (window.DeviceOrientationEvent) {
+    window.addEventListener("deviceorientation", function (e) {
+		rotate(360 - e.alpha);
+    }, false);
+}
+
+function rotate(deg){
+	$('#radar_1').css('transform', 'rotate(' + deg + 'deg)');
+}

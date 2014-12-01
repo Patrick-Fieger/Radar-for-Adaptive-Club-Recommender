@@ -10,9 +10,9 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
     /* Initiale clientInfos
      * FIXME: userId muss noch ermittelt & hinzugefügrt werden */ 
     var clientInfos = {
-        "_userId": "",
+        "userId": "",
         "position": [],
-        "zoomLvl": 0
+        "scale": 0
     }
 
     geolocation.getLocation().then(function(data){
@@ -33,9 +33,9 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
      * solange das Minimum (0) noch nicht erreicht ist
      * FIXME: Animation hinzufügen */
     $scope.zoomIn = function() {
-        if(clientInfos.zoomLvl > 0)
+        if(clientInfos.scale > 0)
         {
-            clientInfos.zoomLvl--;
+            clientInfos.scale--;
             $scope.getData(clientInfos);
         }
     }
@@ -46,7 +46,7 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
     $scope.zoomOut = function() {
         if(!$scope.result.isMax) 
         {
-            clientInfos.zoomLvl++;
+            clientInfos.scale++;
             $scope.getData(clientInfos);
         }
     }

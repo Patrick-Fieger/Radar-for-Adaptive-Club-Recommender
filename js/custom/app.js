@@ -1,7 +1,7 @@
 // Speicher Values in Array bei click
 'use strict';
 var app = angular.module('radar', ['geolocation']);
-
+var isMobil = false;
 
 // Angular Database Requests
 // Holt die Clubs (samt Eigenschaften) aus einem json und speichert sie für angular lesbar 
@@ -24,7 +24,7 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
     $scope.getData = function(clientInfos) {
         if(clientInfos != null)
             $http.post('./db/clubs.json', clientInfos).then(function(radarResponse) {
-                console.log(JSON.stringify(clientInfos));
+                debug(JSON.stringify(clientInfos));
                 $scope.result = radarResponse.data;
             });
     }
@@ -52,9 +52,17 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
     }
 });
 
+function debug(content) {
+    if(isMobil != null && isMobil == true)
+        alert(content);
+    else
+        console.log(content);
+}
+
 if (window.DeviceOrientationEvent) {
     window.addEventListener("deviceorientation", function (e) {
         rotate(360 - e.alpha);
+        if(e.alpha != 0) isMobil = true;
     }, false);
 }
 

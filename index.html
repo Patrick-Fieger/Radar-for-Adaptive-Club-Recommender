@@ -19,7 +19,7 @@
 
 	<div class="row radar">
 		<div id="radar_1">
-			<div ng-repeat="club in result.clubs" id="{{club._id}}" class="clubCircle" ng-style="{top: club.position[0]*250, left: club.position[1]*250, width: club.size*30, height: club.size*30}">
+			<div ng-repeat="club in result.clubs" id="{{club._id}}" class="clubCircle" ng-style="{top: club.position[0]*250, left: club.position[1]*250, width: club.size*30, height: club.size*30}" draggable="true">
 				 <!-- FIXME: Hier sollte ein geeigneter Aufbau und der Inhalt für ein Tooltip stehen. Neben .name stehen die informationen genre & imagePath zur Verfügung -->
 				<div class="tooltip">
 					{{club.name}}
@@ -38,7 +38,7 @@
 	</div>
 
 	<div class="row">
-		<div class="col-4" ng-visible=""><a href="#" class="button_small" ng-click="zoomIn()">f</a></div>
+		<div class="col-4"><a href="#" class="button_small" ng-show="clientInfos.scale>0"ng-click="zoomIn()">f</a></div>
 		<div class="col-4">{{result.clubs.length}} Clubs</div>
 		<div class="col-4"><a href="#" class="button_small" ng-show="!result.isMax" ng-click="zoomOut()">g</a></div>
 	</div>

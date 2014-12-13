@@ -1,0 +1,79 @@
+{
+    "scaleValue": 2000,
+    "isMax": true,
+    "amount": 6,
+    "clubs": [
+        {
+            "_id":"69545c73b946f3e572a687de7d5f9fbe",
+            "name":"U60311",
+            "genre":"electro",
+            "imagePath":"img/testclub.jpg",
+            "position":[0.38,0.652],
+            "size":0.4
+        },
+        {
+            "_id":"2760abfe9962d350a3bf2247d3cfef67",
+            "name":"Tanzhaus West",
+            "genre":"electro",
+            "imagePath":"img/testclub.jpg",
+            "position":[0.536,0.448],
+            "size":0.5
+        },
+        {
+            "_id":"687ebdd5e1c0c89ed7698fdfcd266ed4",
+            "name":"A66",
+            "genre":"electro",
+            "imagePath":"img/testclub.jpg",
+            "position":[0.3,0.48],
+            "size":0.8
+        },
+        {
+            "_id":"c31f5863e4f78e31d336394b78f93b0f",
+            "name":"Robert Jonson",
+            "genre":"electro",
+            "imagePath":"img/testclub.jpg",
+            "position":[0.612,0.32],
+            "size":1
+        },
+        {
+            "_id":"4a15b408bd69263798be7e433d449dae",
+            "name":"Cocoon",
+            "genre":"electro",
+            "imagePath":"img/testclub.jpg",
+            "position":[0.452,0.444],
+            "size":0.3
+        },
+        {
+            "_id":"f99eb1abb22fdad8fe016560d35d334b",
+            "name":"Monza",
+            "genre":"electro",
+            "imagePath":"img/testclub.jpg",
+            "position":[0.512,0.464],
+            "size":0.7
+        },
+        {
+            "_id":"8f69319d790b09da7b5e059c7e162e29",
+            "name":"Batschkapp",
+            "genre":"electro",
+            "imagePath":"img/testclub.jpg",
+            "position":[0.35,0.2],
+            "size":0.7
+        },
+        {
+            "_id":"9d41a54b52cb364184609ddeefcf324b",
+            "name":"Krone",
+            "genre":"electro",
+            "imagePath":"img/testclub.jpg",
+            "position":[0.85,0.55],
+            "size":0.7
+        },
+        {
+            "_id":"c2129854f61a97ed7837fd9f6e0d4a58",
+            "name":"Das Bett",
+            "genre":"electro",
+            "imagePath":"img/testclub.jpg",
+            "position":[0.22,0.888],
+            "size":0.7
+        }
+    ]
+}

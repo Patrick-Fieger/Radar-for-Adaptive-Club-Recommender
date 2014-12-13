@@ -9,22 +9,23 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
     
     /* Initiale clientInfos
      * FIXME: userId muss noch ermittelt & hinzugefügrt werden */ 
-    var clientInfos = {
+    $scope.clientInfos = {
         "userId": "",
         "position": [],
         "scale": 0
     }
 
     geolocation.getLocation().then(function(data){
-      clientInfos.position = [data.coords.latitude, data.coords.longitude];
-      $scope.getData(clientInfos); // erst sobald die position da ist, werden die Club-Circles erzeugt
+      $scope.clientInfos.position = [data.coords.latitude, data.coords.longitude];
+      $scope.getData($scope.clientInfos); // erst sobald die position da ist, werden die Club-Circles erzeugt
     });
 
     // Erste initialisierung und funktion um sich die aktuellen Daten vom Server zu holen
     $scope.getData = function(clientInfos) {
         if(clientInfos != null)
-            $http.post('./db/clubs.json', clientInfos).then(function(radarResponse) {
-                debug(JSON.stringify(clientInfos));
+            //$http.post('./db/clubs.json', clientInfos).then(function(radarResponse) {
+            $http.post('./db/clubs_'+$scope.clientInfos.scale+'.json', $scope.clientInfos).then(function(radarResponse) { // Behelfslösung bis der Server steht
+                debug(JSON.stringify($scope.clientInfos));
                 $scope.result = radarResponse.data;
             });
     }
@@ -33,10 +34,10 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
      * solange das Minimum (0) noch nicht erreicht ist
      * FIXME: Animation hinzufügen */
     $scope.zoomIn = function() {
-        if(clientInfos.scale > 0)
+        if($scope.clientInfos.scale > 0)
         {
-            clientInfos.scale--;
-            $scope.getData(clientInfos);
+            $scope.clientInfos.scale--;
+            $scope.getData($scope.clientInfos);
         }
     }
 
@@ -46,8 +47,8 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
     $scope.zoomOut = function() {
         if(!$scope.result.isMax) 
         {
-            clientInfos.scale++;
-            $scope.getData(clientInfos);
+            $scope.clientInfos.scale++;
+            $scope.getData($scope.clientInfos);
         }
     }
 });

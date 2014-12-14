@@ -1,6 +1,6 @@
 // Speicher Values in Array bei click
 'use strict';
-var app = angular.module('radar', ['geolocation']);
+var app = angular.module('radar', ['geolocation','ngAnimate']);
 var isMobil = false;
 
 // Angular Database Requests

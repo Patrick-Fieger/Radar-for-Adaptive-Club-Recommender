@@ -235,3 +235,43 @@
  	background-color: green;
  	padding: 10px;
  }
+
+ .clubCircle.ng-enter.ng-enter-active,
+ .clubCircle.ng-move.ng-move-active {
+  opacity:1;
+}
+
+.clubCircle.ng-enter,  .clubCircle.ng-move {
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  opacity:0;
+}
+
+ .clubCircle.ng-leave {
+  -webkit-animation:0.4s fade;
+  -moz-animation:0.4s fade;
+  -o-animation:0.4s fade;
+  animation:0.4s fade;
+}
+
+@keyframes fade {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-webkit-keyframes fade {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-moz-keyframes fade {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@-o-keyframes fade {
+  from { opacity:1; }
+  to { opacity:0; }
+}

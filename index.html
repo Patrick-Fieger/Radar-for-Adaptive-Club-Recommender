@@ -5,16 +5,22 @@
 	<link rel="stylesheet" href="./style/all.css" type="text/css">
 	<link rel="stylesheet" href="./style/main.css" type="text/css">
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,900italic,900,700italic,700,500italic,500,400italic,300italic,300,100italic,100' rel='stylesheet' type='text/css'>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="./js/custom/jquery.js" type="text/javascript"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> 
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+	<script src="./js/custom/custom.js" type="text/javascript"></script>
+
 </head>
 <body>
 
 <div id="wrapper" ng-controller="AppCtrl">
 
 	<div class="row">
-		<h1>Club-Radar</h1>
+		
+
+		<div class="head_search col-12"><input type="text" name="search" value="Dieburg"></div>
 	</div>
 
 	<div class="row radar">
@@ -30,32 +36,39 @@
 			<div id="radar_2">
 				<div id="radar_3">
 					<div id="radar_4">
-						<div id="radar_5"></div>
+						<div id="radar_5"><a href="#" class="button">p</a></div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-4"><a href="#" class="button_small" ng-show="clientInfos.scale>0"ng-click="zoomIn()">f</a></div>
+	<div class="row col-12">
+		<!---<div class="col-4"><a href="#" class="button_small" ng-show="clientInfos.scale>0"ng-click="zoomIn()">-</a></div>
 		<div class="col-4">{{result.clubs.length}} Clubs</div>
-		<div class="col-4"><a href="#" class="button_small" ng-show="!result.isMax" ng-click="zoomOut()">g</a></div>
+		<div class="col-4"><a href="#" class="button_small" ng-show="!result.isMax" ng-click="zoomOut()">+</a></div>-->
+			<div id="slider-result">0</div> 
+			<div class="slider"></div> 
+			<input type="hidden" id="hidden"/>
 	</div>
-	<hr>
+
 	<div class="row">
-		<div class="col-4"><a href="#" class="button">h</a></div>
-		<div class="col-4"><a href="#" class="button">b</a></div>
-		<div class="col-4"><a href="#" class="button">a</a></div>
+		<div class="col-4"><a href="#" class="button">l</a></div>
+		<div class="col-4"><a href="#" class="button">r</a></div>
+		<div class="col-4"><a href="#" class="button">p</a></div>
 	</div>
 
 	<p>{{coords.lat}}</p>
 	<p>{{coords.long}}</p>
 </div>
-<script src="./js/core/jquery.js" type="text/javascript"></script>
+
+<!--<script src="./js/core/jquery.js" type="text/javascript"></script>-->
 <script src="./js/core/angular.min.js" type="text/javascript"></script>
 <script src="./js/core/angularjs-geolocation.min.js" type="text/javascript"></script>
 <script src="./js/custom/app.js" type="text/javascript"></script>
+
+
+
 
 </body>
 </html>

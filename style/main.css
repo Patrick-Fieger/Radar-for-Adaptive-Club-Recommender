@@ -1,237 +1,344 @@
-/* Custom Style for "Radar for Adaptive Club Recommender" Mainpage
- * Authors: 
- * Created: 2014-11-27
- * Last Modified: 2014-11-27 */
-
- @font-face {
-	font-family: 'icons';
-	src:url('fonts/icons.eot?-9f4z7t');
-	src:url('fonts/icons.eot?#iefix-9f4z7t') format('embedded-opentype'),
-		url('fonts/icons.woff?-9f4z7t') format('woff'),
-		url('fonts/icons.ttf?-9f4z7t') format('truetype'),
-		url('fonts/icons.svg?-9f4z7t#icons') format('svg');
+@font-face {
+	font-family: 'app_icons';
+	src: url('fonts/app_icons.eot?j4u7oy');
+	src: url('fonts/app_icons.eot?#iefixj4u7oy') format('embedded-opentype'), url('fonts/app_icons.woff?j4u7oy') format('woff'), url('fonts/app_icons.ttf?j4u7oy') format('truetype'), url('fonts/app_icons.svg?j4u7oy#app_icons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
-
-[class^="icon-"], [class*=" icon-"] {
-	font-family: 'icons';
+[class^="icon-"],
+[class*=" icon-"] {
+	font-family: 'app_icons';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
-	line-height: 1;
-
-	/* Better Font Rendering =========== */
+	line-height: 1; /* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-
-.icon-user:before {
-	content: "\61";
+.icon-radar:before {
+	content: "\72";
 }
-.icon-target:before {
-	content: "\62";
+.icon-profile:before {
+	content: "\70";
 }
-.icon-heart:before {
-	content: "\63";
+.icon-lupe:before {
+	content: "\6c";
 }
-.icon-checkmark:before {
-	content: "\64";
+.icon-minus2:before {
+	content: "\2d";
 }
-.icon-cross:before {
-	content: "\65";
+.icon-plus2:before {
+	content: "\2b";
 }
-.icon-minus:before {
-	content: "\66";
+.icon-location:before {
+	content: "\6f";
 }
-.icon-plus:before {
-	content: "\67";
+* {
+	margin: 0;
+	padding: 0;
 }
-.icon-list:before {
-	content: "\68";
+body {
+	background-color: #15151b;
+	color: #ff0060;
+	font-family: 'Roboto';
+	font-size: 14px;
+	overflow: hidden;
 }
-
-
- *{
- 	margin: 0;
- 	padding: 0;
- }
-
- body {
- 	background-color: #FFF;
- 	color: #000;
- 	font-family: 'Roboto';
- 	font-size: 14px;
-
- }
-
- h1 {
- 	text-align: center;
- 	font-weight: 500;
- 	font-size: 26px;
- 	padding-top: 20px;
- }
-
- #wrapper {
- 	width: 100%;
- 	height: 100%;
- }
-
-.row:before, 
+a {
+	outline: none;
+	-moz-outline-style: none;
+}
+h1 {
+	text-align: center;
+	font-weight: 900;
+	font-size: 34px;
+	padding-top: 20px;
+	color: #FFF;
+	text-transform: uppercase;
+}
+p {
+	font-size: 14px;
+	color: #fff;
+	font-weight: 300;
+	text-align: left !important;
+	line-height: 22px;
+}
+span.icon {
+	font-family: 'app_icons';
+	font-size: 18px;
+	padding: 4px 5px 0 0;
+}
+#wrapper {
+	width: 100%;
+	height: 100%;
+}
+.row:before,
 .row:after {
-    content:"";
-    display: table ;
-    clear:both;
+	content: "";
+	display: table;
+	clear: both;
 }
-
 [class*='col-'] {
-    float: left; 
-    min-height: 1px; 
-    width: 16.66%; 
-    padding: 12px; 
-    background-color: #FFF;
-    box-sizing: border-box;
-    text-align: center;
+	float: left;
+	min-height: 1px;
+	width: 16.66%;
+	padding: 10px 15px;
+	box-sizing: border-box;
+	text-align: center;
+}
+.col-1 {
+	width: 8.33%;
+}
+.col-2 {
+	width: 16.66%;
+}
+.col-3 {
+	width: 25%;
+}
+.col-4 {
+	width: 33.33%;
+}
+.col-5 {
+	width: 41.66%;
+}
+.col-6 {
+	width: 50%;
+}
+.col-7 {
+	width: 58.33%;
+}
+.col-8 {
+	width: 66.66%;
+}
+.col-9 {
+	width: 75%;
+}
+.col-10 {
+	width: 83.33%;
+}
+.col-11 {
+	width: 91.66%;
+}
+.col-12 {
+	width: 100%;
+}
+.outline,
+.outline * {
+	outline: 1px solid #F6A1A1;
+}
+.button {
+	font-family: 'app_icons';
+	font-size: 50px;
+	margin: 0 0 0 -1px;
+	text-align: center;
+	text-decoration: none;
+	color: #50557f;
+	transition: 0.3s;
+	background: none;
+	z-index: 7000;
+}
+.button:hover {
+	color: #ff0060;
+}
+.button_small {
+	font-family: 'app_icons';
+	font-size: 30px;
+	margin: 0px auto;
+	display: block;
+	width: 30px;
+	height: 25px;
+	text-align: center;
+	padding-top: 5px;
+	text-decoration: none;
+	color: #50557f;
+	transition: 0.3s;
+}
+.button_small:hover {
+	color: #ff0060;
+}
+.radar {
+	position: absolute;
+	left: 18%;
+	top: 30%;
+}
+#radar_1 {
+	position: absolute;
+	border-radius: 250px;
+	width: 250px;
+	height: 250px;
+	border: 1px solid #50557f;
+	margin-left: auto;
+	margin-right: auto;
+}
+#radar_2 {
+	border-radius: 200px;
+	width: 200px;
+	height: 200px;
+	border: 1px solid #50557f;
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#radar_3 {
+	border-radius: 150px;
+	width: 150px;
+	height: 150px;
+	border: 1px solid #50557f;
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#radar_4 {
+	border-radius: 100px;
+	width: 100px;
+	height: 100px;
+	border: 1px solid #50557f;
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#radar_5 {
+	border-radius: 48px;
+	width: 48px;
+	height: 48px;
+	border: 1px solid #50557f;
+	margin-top: 24px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
-.col-1{ width: 8.33%; }
-.col-2{ width: 16.66%; }
-.col-3{ width: 25%; }
-.col-4{ width: 33.33%; }
-.col-5{ width: 41.66%; }
-.col-6{ width: 50%; }
-.col-7{ width: 58.33%; }
-.col-8{ width: 66.66%; }
-.col-9{ width: 75%; }
-.col-10{ width: 83.33%; }
-.col-11{ width: 91.66%; }
-.col-12{ width: 100%; }
-
-.outline, .outline *{
-    outline: 1px solid #F6A1A1; 
+/* [class*='club_'] {
+	background-color: #2e2e2e;
+	position: absolute;
 }
-
- .button {
- 	font-family: 'icons';
- 	font-size: 20px;
- 	margin: 0px auto;
- 	border-radius: 40px;
- 	display: block;
- 	width: 40px;
- 	height: 30px;
- 	border: 1px solid #000;
- 	text-align: center;
- 	padding-top: 10px;
- 	text-decoration: none;
- 	color: #000;
- 	transition: 0.3s;
- }
-
- .button:hover {
- 	background: #000;
- 	color: #FFF;
- }
-
-  .button_small {
-  	font-family: 'icons';
-  	font-size: 20px;
- 	margin: 0px auto;
- 	border-radius: 40px;
- 	display: block;
- 	width: 30px;
- 	height: 25px;
- 	border: 3px solid #000;
- 	text-align: center;
- 	padding-top: 5px;
- 	text-decoration: none;
- 	color: #000;
- 	transition: 0.3s;
- }
-
- .button_small:hover {
- 	background: #000;
- 	color: #FFF;
- }
-
- .radar {
- 	margin: 25px;
- }
-
- #radar_1 {
- 	position: relative;
- 	border-radius: 250px;
- 	width: 250px;
- 	height: 250px;
- 	border: 1px solid #000;
- 	margin-left: auto;
-    margin-right: auto;
- }
-
- #radar_2 {
- 	border-radius: 200px;
- 	width: 200px;
- 	height: 200px;
- 	border: 1px solid #000;
- 	margin-top: 25px;
- 	margin-left: auto;
-    margin-right: auto;
- }
-
- #radar_3 {
- 	border-radius: 150px;
- 	width: 150px;
- 	height: 150px;
- 	border: 1px solid #000;
- 	margin-top: 25px;
- 	margin-left: auto;
-    margin-right: auto;
- }
-
-  #radar_4 {
- 	border-radius: 100px;
- 	width: 100px;
- 	height: 100px;
- 	border: 1px solid #000;
- 	margin-top: 25px;
- 	margin-left: auto;
-    margin-right: auto;
- }
-
- #radar_5 {
- 	border-radius: 50px;
- 	width: 50px;
- 	height: 50px;
- 	border: 1px solid #000;
- 	margin-top: 25px;
- 	margin-left: auto;
-    margin-right: auto;
- }
-
-/*[class*='club_'] {
-    background-color: #2e2e2e;
- 	position: absolute;
-}
-
 .top {
 	margin-top: 10px;
-}*/
-
- .clubCircle {
- 	position:absolute;
- 	background:#000;
- 	border-radius:100%;
- 	opacity:0.9;
- 	cursor: pointer;
- }
-
- .tooltip {
- 	display: none;
- }
-
+}
+*/
+.clubCircle {
+	position: absolute;
+	background: #ff0060;
+	border-radius: 100%;
+	cursor: pointer;
+	z-index: 1;
+}
+.tooltip {
+	display: none;
+	position: fixed;
+	background-color: #141417;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	cursor: default;
+	transition: 0.5s;
+	z-index: 0;
+}
 .active {
- 	display: inline-block;
- 	background-color: green;
- 	padding: 10px;
- }
+	display: block;
+	position: fixed;
+	background-color: #141417;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	opacity: 1;
+}
+.close {
+	display: block;
+	cursor: pointer;
+	position: absolute;
+	right: 25px;
+	top: 0px;
+	color: #FFF;
+	font-size: 60px;
+	font-weight: 900;
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.header-img {
+	width: 100%;
+	height: 30%;
+	background-size: cover;
+	bottom: 10%;
+	vertical-align: bottom;
+}
+.navi {
+	position: absolute;
+	bottom: 5%;
+}
+.head_search {
+	position: absolute;
+	top: 40px;
+}
+.head_search input[type=text] {
+	background: #141316;
+	border: 1px solid #50557f;
+	height: 40px;
+	padding: 0px 20px 0 45px;
+	border-radius: 40px;
+	color: #ff0060;
+	font-size: 15px;
+	font-weight: 100;
+	outline: none;
+	background-image: url(img/search_icon.png);
+	background-repeat: no-repeat;
+}
+.head_search input[type=text]::before {
+	content: "o";
+	font-family: 'app_icons';
+	color: #ff0060;
+	font-size: 16px;
+}
+
+/* the slider background */
+.slider {
+	width: 66%;
+	height: 2px;
+	background: #50557f;
+	position: absolute;
+	bottom: 10%;
+	left: 16.66%;
+	margin: 0px auto;
+}
+
+/* Style for the slider button */
+.ui-slider-handle {
+	width: 18px;
+	height: 18px;
+	border-radius: 18px;
+	position: absolute;
+	top: -7px;
+	margin-left: -12px;
+	background: #ff0060;
+}
+
+/* Result div where the slider value is displayed */
+#slider-result {
+	font-size: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #fff;
+	text-align: center;
+	text-shadow: 0 1px 1px #000;
+	font-weight: 700;
+	margin: 0px auto;
+	position: absolute;
+	left: 50%;
+	bottom: 25px;
+}
+
+/* This is the fill bar colour */
+.ui-widget-header {
+	background: #ff0060;
+	height: 2px;
+	left: 1px;
+	top: 1px;
+	position: absolute;
+}

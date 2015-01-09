@@ -6,7 +6,7 @@ var isMobil = false;
 // Angular Database Requests
 // Holt die Clubs (samt Eigenschaften) aus einem json und speichert sie für angular lesbar 
 app.controller('AppCtrl', function($scope, $http, geolocation) {
-    
+    $scope.range=10;
     /* Initiale clientInfos
      * FIXME: userId muss noch ermittelt & hinzugefügrt werden */ 
     $scope.clientInfos = {
@@ -28,6 +28,10 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
                 debug(JSON.stringify($scope.clientInfos));
                 $scope.result = radarResponse.data;
             });
+    }
+
+    $scope.rangeChange=function(){
+        console.log($scope.range)
     }
 
     /* Schränkt das Radar auf einen kleineren Bereich/weniger Clubs ein 
@@ -55,7 +59,7 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
 
 function debug(content) {
     if(isMobil != null && isMobil == true)
-        alert(content);
+        console.log(content);
     else
         console.log(content);
 }

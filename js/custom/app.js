@@ -6,7 +6,7 @@ var isMobil = false;
 // Angular Database Requests
 // Holt die Clubs (samt Eigenschaften) aus einem json und speichert sie für angular lesbar 
 app.controller('AppCtrl', function($scope, $http, geolocation) {
-    $scope.range=10;
+    $scope.range=1;
     /* Initiale clientInfos
      * FIXME: userId muss noch ermittelt & hinzugefügrt werden */ 
     $scope.clientInfos = {
@@ -23,15 +23,14 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
     // Erste initialisierung und funktion um sich die aktuellen Daten vom Server zu holen
     $scope.getData = function(clientInfos) {
         if(clientInfos != null)
-            //$http.post('./db/clubs.json', clientInfos).then(function(radarResponse) {
-            $http.post('./db/clubs_'+$scope.clientInfos.scale+'.json', $scope.clientInfos).then(function(radarResponse) { // Behelfslösung bis der Server steht
-                debug(JSON.stringify($scope.clientInfos));
-                $scope.result = radarResponse.data;
+            $http.get('./db/clubs_'+$scope.clientInfos.scale+'.json').then(function(radarResponse) { // Behelfslösung bis der Server steht
+                updateView(radarResponse.data);
             });
     }
 
     $scope.rangeChange=function(){
-        console.log($scope.range)
+        $scope.clientInfos.scale = $scope.range - 1;
+        $scope.getData($scope.clientInfos);
     }
 
     /* Schränkt das Radar auf einen kleineren Bereich/weniger Clubs ein 
@@ -73,4 +72,37 @@ if (window.DeviceOrientationEvent) {
 
 function rotate(deg){
 	$('#radar_1').css('transform', 'rotate(' + deg + 'deg)');
+}
+
+var arrayID = [];
+function updateView(data) {
+    var positionMultiplikator = 250;
+    var groessenMultiplikator = 30;
+    arrayID = [];
+    $(data.clubs).each(function(index, val) {
+        var id = val._id;
+        arrayID.push(id);
+        if ($("#" + id).length == 0) {
+            $('#radar_1').append('<div class="clubCircle" id="' + id + '">');
+            setTimeout(function() {
+                $("#" + id).addClass('_active');
+            }, 100);
+        }
+        $("#" + id).css({
+            top: val.position[0] * positionMultiplikator,
+            left: val.position[1] * positionMultiplikator,
+            width: val.size * groessenMultiplikator,
+            height: val.size * groessenMultiplikator,
+        });
+    }).promise().done(function() {
+        $('.clubCircle').each(function(index, el) {
+            if ($.inArray($(this).attr('id'), arrayID) == -1) {
+                var that = $(this);
+                that.removeClass('_active');
+                setTimeout(function() {
+                    that.remove();
+                }, 350);
+            }
+        });
+    });
 }

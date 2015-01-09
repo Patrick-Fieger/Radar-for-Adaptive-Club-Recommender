@@ -223,7 +223,19 @@ span.icon {
 	border-radius: 100%;
 	cursor: pointer;
 	z-index: 1;
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
 }
+
+.clubCircle._active{
+	opacity: 1;
+	visibility: visible;
+}
+
 .tooltip {
 	display: none;
 	position: fixed;

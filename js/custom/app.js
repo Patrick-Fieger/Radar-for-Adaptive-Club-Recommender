@@ -25,34 +25,14 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
         if(clientInfos != null)
             $http.get('./db/clubs_'+$scope.clientInfos.scale+'.json').then(function(radarResponse) { // Behelfslösung bis der Server steht
                 updateView(radarResponse.data);
+                $scope.amountScaleSteps = radarResponse.data.amountScaleSteps;
+                $scope.maxScaleValue = radarResponse.data.maxScaleValue;
             });
     }
 
     $scope.rangeChange=function(){
         $scope.clientInfos.scale = $scope.range - 1;
         $scope.getData($scope.clientInfos);
-    }
-
-    /* Schränkt das Radar auf einen kleineren Bereich/weniger Clubs ein 
-     * solange das Minimum (0) noch nicht erreicht ist
-     * FIXME: Animation hinzufügen */
-    $scope.zoomIn = function() {
-        if($scope.clientInfos.scale > 0)
-        {
-            $scope.clientInfos.scale--;
-            $scope.getData($scope.clientInfos);
-        }
-    }
-
-    /* Erweitert das Radar um weitere Clubs 
-     * solange das Maximum noch nicht erreicht ist
-     * FIXME: Animation hinzufügen */
-    $scope.zoomOut = function() {
-        if(!$scope.result.isMax) 
-        {
-            $scope.clientInfos.scale++;
-            $scope.getData($scope.clientInfos);
-        }
     }
 });
 
@@ -62,6 +42,7 @@ function debug(content) {
     else
         console.log(content);
 }
+
 
 if (window.DeviceOrientationEvent) {
     window.addEventListener("deviceorientation", function (e) {
@@ -73,6 +54,7 @@ if (window.DeviceOrientationEvent) {
 function rotate(deg){
 	$('#radar_1').css('transform', 'rotate(' + deg + 'deg)');
 }
+
 
 var arrayID = [];
 function updateView(data) {

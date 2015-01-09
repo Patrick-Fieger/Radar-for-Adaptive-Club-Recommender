@@ -1,7 +1,6 @@
 {
-    "scaleValue": 2000,
-    "isMax": false,
-    "amount": 6,
+    "maxScaleValue": 2000,
+    "amountScaleSteps": 3,
     "clubs": [
         {
             "_id":"69545c73b946f3e572a687de7d5f9fbe",

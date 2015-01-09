@@ -79,15 +79,18 @@ function updateView(data) {
     var positionMultiplikator = 250;
     var groessenMultiplikator = 30;
     arrayID = [];
+    // Wir iterieren durch alle Clubs und speichern jeweils die ID in ein array
     $(data.clubs).each(function(index, val) {
         var id = val._id;
         arrayID.push(id);
+        // Check ob element Existiert, falls nicht, wird dieses Objekt erzeugt
         if ($("#" + id).length == 0) {
             $('#radar_1').append('<div class="clubCircle" id="' + id + '">');
             setTimeout(function() {
                 $("#" + id).addClass('_active');
             }, 100);
         }
+        // Positionierung des Elements
         $("#" + id).css({
             top: val.position[0] * positionMultiplikator,
             left: val.position[1] * positionMultiplikator,
@@ -95,6 +98,8 @@ function updateView(data) {
             height: val.size * groessenMultiplikator,
         });
     }).promise().done(function() {
+        // Wir iterieren durch alle bisher erzeugten Elemente und checken ob diese mit dem zuvor
+        // abgesicherten array übereinstimmen, falls nicht, wird dieses Element gelöscht
         $('.clubCircle').each(function(index, el) {
             if ($.inArray($(this).attr('id'), arrayID) == -1) {
                 var that = $(this);

@@ -17,8 +17,24 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
 
     geolocation.getLocation().then(function(data){
       $scope.clientInfos.position = [data.coords.latitude, data.coords.longitude];
+      $scope.nominatim($scope.clientInfos.position);
       $scope.getData($scope.clientInfos); // erst sobald die position da ist, werden die Club-Circles erzeugt
     });
+    
+    // API zur Umwandlung von Geodaten in Stadtnamen einbinden 
+    $scope.nominatim = function(clientPosition) {
+    	if(clientPosition != null) {    		
+    		//Map Quest URL zum Anfragen der Daten (JSON-Format)
+    		var mapquestUrl = 'http://open.mapquestapi.com/geocoding/v1/reverse?key=Fmjtd%7Cluu82961n9%2Crw%3Do5-9w1sgw&callback=renderGeodata';
+    		mapquestUrl+='&json={';		
+			mapquestUrl+='location:{latLng:{lat:'+ clientPosition[0] + ',lng:' + clientPosition[1] + '}}}';	//aktuellen Aufenthaltsort des User einfügen
+			
+			var mapquestScript = document.createElement('script');
+    		mapquestScript.type = 'text/javascript';
+    		mapquestScript.src = mapquestUrl;
+    		document.body.appendChild(mapquestScript);    		
+    	}
+    }
 
     // Erste initialisierung und funktion um sich die aktuellen Daten vom Server zu holen
     $scope.getData = function(clientInfos) {
@@ -35,6 +51,13 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
         $scope.getData($scope.clientInfos);
     }
 });
+
+	//aus den Geodaten der Position des Users Stadt ermitteln:
+function renderGeodata (response) {
+    	var userLocation = response.results[0].locations[0];
+    		// adminArea5 = Stadt  
+    	$('#search').attr("placeholder", userLocation.adminArea5);
+    }
 
 function debug(content) {
     if(isMobil != null && isMobil == true)

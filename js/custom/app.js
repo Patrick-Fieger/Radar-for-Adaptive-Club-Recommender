@@ -51,6 +51,8 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
         $scope.clientInfos.scale = $scope.range - 1;
         $scope.getData($scope.clientInfos);
     }
+
+    
 });
 
 	//aus den Geodaten der Position des Users Stadt ermitteln:

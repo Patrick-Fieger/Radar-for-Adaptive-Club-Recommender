@@ -46,6 +46,7 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
             });
     }
 
+    // wird ausgeführt, wenn der Slider geändert wird
     $scope.rangeChange=function(){
         $scope.clientInfos.scale = $scope.range - 1;
         $scope.getData($scope.clientInfos);
@@ -66,7 +67,7 @@ function debug(content) {
         console.log(content);
 }
 
-
+// Drehung in Abhängigkeit zum Kompass
 if (window.DeviceOrientationEvent) {
     window.addEventListener("deviceorientation", function (e) {
         rotate(e.alpha);
@@ -78,7 +79,7 @@ function rotate(deg){
 	$('#radar_1').css('transform', 'rotate(' + deg + 'deg)');
 }
 
-
+// Club-Handling
 var arrayID = [];
 function updateView(data) {
     var positionMultiplikator = 250;

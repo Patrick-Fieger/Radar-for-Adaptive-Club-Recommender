@@ -2,6 +2,7 @@
 'use strict';
 var app = angular.module('radar', ['geolocation']);
 var isMobil = false;
+var actual_data;
 
 app.filter('parseInt', function () {
   return function (item) {
@@ -48,6 +49,7 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
         if(clientInfos != null)
             $http.get('./db/clubs_'+$scope.clientInfos.scale+'.json').then(function(radarResponse) { // Behelfslösung bis der Server steht
                 updateView(radarResponse.data);
+                actual_data = radarResponse.data;
                 $scope.amountScaleSteps = radarResponse.data.amountScaleSteps;
                 $scope.maxScaleValue = radarResponse.data.maxScaleValue;
             });
@@ -126,3 +128,19 @@ function updateView(data) {
         });
     });
 }
+
+$(document).on('click','.clubCircle._active',function(){
+    var id = $(this).attr("id");
+    $(actual_data.clubs).each( function(index, val) {
+        if(val._id == id) {
+
+            $(".col-6").html(val.name);
+        } 
+    });
+    $(".tooltip").addClass("active");
+    $(".clubCircle").removeClass("_active");
+})
+$(document).on('click','.close',function(){
+    $(".tooltip").removeClass("active");
+    $(".clubCircle").addClass("_active"); 
+})

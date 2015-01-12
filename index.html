@@ -24,7 +24,7 @@
 		<div id="radar_1">
 			<div ng-repeat="club in result.clubs" id="{{club._id}}" class="clubCircle" ng-style="{top: club.position[0]*250, left: club.position[1]*250, width: club.size*30, height: club.size*30}">
 
-				<!-- @Volker: Wenn möglich bitte den Tooltip innerhalb dieses DIV's (statt wie bisher danach) anlegen. Das erspart uns etwas arbeit bei der Angular-Impementierung. Grüße Tim- -->
+			
 			
 			</div>
 
@@ -58,7 +58,7 @@
 		</div>
 	</div>
 
-	<div class="row col-12">
+	<div class="slider row col-12">
 		<input type="range" min="1" max="{{amountScaleSteps}}" step="1" value="1" ng-model="range" ng-change="rangeChange()" >
 	
 		<!---<div class="col-4"><a href="#" class="button_small" ng-show="clientInfos.scale>0"ng-click="zoomIn()">-</a></div>

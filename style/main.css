@@ -160,14 +160,19 @@ span.icon {
 }
 .radar {
 	position: absolute;
-	left: 18%;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
 	top: 30%;
+	width: 250px;
+	height: 250px;
 }
 #radar_1 {
 	position: absolute;
 	border-radius: 250px;
-	width: 250px;
-	height: 250px;
+	width: 100%;
+	height: 100%;
 	border: 1px solid #50557f;
 	margin-left: auto;
 	margin-right: auto;
@@ -237,7 +242,6 @@ span.icon {
 }
 
 .tooltip {
-	display: none;
 	position: fixed;
 	background-color: #141417;
 	width: 100%;
@@ -245,20 +249,15 @@ span.icon {
 	top: 0;
 	left: 0;
 	opacity: 0;
+	visibility: hidden;
 	cursor: default;
-	transition: 0.5s;
+	transition: 0.3s;
 	z-index: 0;
 }
 .active {
-	display: block;
-	position: fixed;
-	background-color: #141417;
-	width: 100%;
-	height: 100%;
 	z-index: 2;
-	top: 0;
-	left: 0;
 	opacity: 1;
+	visibility: visible;
 }
 .close {
 	display: block;
@@ -274,6 +273,10 @@ span.icon {
 	-o-transform: rotate(45deg);
 	-webkit-transform: rotate(45deg);
 	transform: rotate(45deg);
+}
+
+.close:hover {
+	color: #ff0060;
 }
 .header-img {
 	width: 100%;
@@ -311,62 +314,20 @@ span.icon {
 }
 
 /* the slider background */
-.slider {
-	width: 66%;
-	height: 2px;
-	background: #50557f;
+/*Input range style*/
+.slider{
 	position: absolute;
 	bottom: 10%;
-	left: 16.66%;
-	margin: 0px auto;
 }
-
-/* Style for the slider button */
-.ui-slider-handle {
-	width: 18px;
-	height: 18px;
-	border-radius: 18px;
-	position: absolute;
-	top: -7px;
-	margin-left: -12px;
-	background: #ff0060;
-}
-
-/* Result div where the slider value is displayed */
-#slider-result {
-	font-size: 10px;
-	font-family: Arial, Helvetica, sans-serif;
-	color: #fff;
-	text-align: center;
-	text-shadow: 0 1px 1px #000;
-	font-weight: 700;
-	margin: 0px auto;
-	position: absolute;
-	left: 50%;
-	bottom: 25px;
-}
-
-/* This is the fill bar colour */
-.ui-widget-header {
-	background: #ff0060;
-	height: 2px;
-	left: 1px;
-	top: 1px;
-	position: absolute;
-}
-
-
-/*Input range style*/
-
 
 input[type=range]{
     -webkit-appearance: none;
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-    width: 300px;
-    height: 5px;
-    background: #fff;
+    width: 66%;
+    height: 2px;
+    background: #50557f;
     border: none;
     border-radius: 3px;
 }
@@ -376,9 +337,9 @@ input[type=range]::-webkit-slider-thumb {
     border: none;
     height: 16px;
     width: 16px;
-    border-radius: 20%;
+    border-radius: 50%;
     background: #ff0060;
-    margin-top: -5px;
+    margin-top: -6px;
 }
 
 input[type=range]:focus {
@@ -386,6 +347,13 @@ input[type=range]:focus {
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #ddd;
+    background: #ff0060;
 }
+
+#slider-result {
+	text-align: center !important;
+	margin-top: 10px;
+	color: #50557f;
+}
+
 

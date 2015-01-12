@@ -1,9 +1,10 @@
 $(function() {
-    $(".clubCircle").click(function() {
-      $(".tooltip").toggleClass("active"); 
-    });
-
-    $(".close").click(function() {
-      $(".tooltip .active").removeClass("active"); 
-    });
+    $(document).on('click','.clubCircle._active',function(){
+    	$(".tooltip").toggleClass("active"); 
+    	$(".clubCircle").removeClass("_active");
+    })
+    $(document).on('click','.close',function(){
+    	$(".tooltip").removeClass("active");
+    	$(".clubCircle").toggleClass("_active"); 
+    })
 });

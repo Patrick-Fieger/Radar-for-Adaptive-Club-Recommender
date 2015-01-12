@@ -3,6 +3,13 @@
 var app = angular.module('radar', ['geolocation']);
 var isMobil = false;
 
+app.filter('parseInt', function () {
+  return function (item) {
+    if(!isNaN(item)){
+       return  parseInt(item)
+    }
+  };
+});
 // Angular Database Requests
 // Holt die Clubs (samt Eigenschaften) aus einem json und speichert sie für angular lesbar 
 app.controller('AppCtrl', function($scope, $http, geolocation) {

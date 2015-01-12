@@ -64,7 +64,7 @@
 		<!---<div class="col-4"><a href="#" class="button_small" ng-show="clientInfos.scale>0"ng-click="zoomIn()">-</a></div>
 		<div class="col-4">{{result.clubs.length}} Clubs</div>
 		<div class="col-4"><a href="#" class="button_small" ng-show="!result.isMax" ng-click="zoomOut()">+</a></div>-->
-		<p id="slider-result">{{range*(maxScaleValue/amountScaleSteps)}} m</p>
+		<p id="slider-result">{{range*(maxScaleValue/amountScaleSteps) | parseInt}} m</p>
 	</div>
 
 	<!-- <div class="row">

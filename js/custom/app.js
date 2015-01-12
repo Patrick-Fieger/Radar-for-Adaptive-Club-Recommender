@@ -85,7 +85,7 @@ if (window.DeviceOrientationEvent) {
 }
 
 function rotate(deg){
-	$('#radar_1').css('transform', 'rotate(' + deg + 'deg)');
+	$('.pointWrapper').css('transform', 'rotate(' + deg + 'deg)');
 }
 
 // Club-Handling
@@ -100,7 +100,7 @@ function updateView(data) {
         arrayID.push(id);
         // Check ob element Existiert, falls nicht, wird dieses Objekt erzeugt
         if ($("#" + id).length == 0) {
-            $('#radar_1').append('<div class="clubCircle" id="' + id + '">');
+            $('.pointWrapper').append('<div class="clubCircle" id="' + id + '">');
             setTimeout(function() {
                 $("#" + id).addClass('_active');
             }, 100);

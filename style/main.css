@@ -347,7 +347,7 @@ input[type=range]:focus {
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
-    background: #ff0060;
+    background: #50557f;
 }
 
 #slider-result {

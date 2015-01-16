@@ -135,6 +135,8 @@ $(document).on('click','.clubCircle._active',function(){
         if(val._id == id) {
 
             $(".col-6").html(val.name);
+            $(".header-img").css("background-image", "url("+val.imagePath+")");
+            $("p.info").html(val.description);
         } 
     });
     $(".tooltip").addClass("active");

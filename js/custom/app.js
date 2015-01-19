@@ -3,7 +3,7 @@
 var app = angular.module('radar', ['geolocation']);
 var isMobil = false;
 var actual_data;
-var url = 'localhost:3000/ruleengine'
+var url = 'http://localhost:3000/ruleengine'
 
 app.filter('parseInt', function () {
   return function (item) {

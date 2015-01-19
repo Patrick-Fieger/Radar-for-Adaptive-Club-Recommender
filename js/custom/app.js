@@ -47,7 +47,7 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
     // Erste initialisierung und funktion um sich die aktuellen Daten vom Server zu holen
     $scope.getData = function(clientInfos) {
         if(clientInfos != null)
-            $http.get('./db/clubs_'+$scope.clientInfos.scale+'.json').then(function(radarResponse) { // Behelfslösung bis der Server steht
+            $http.post('./db/clubs_'+clientInfos.scale+'.json',clientInfos).then(function(radarResponse) { // Behelfslösung bis der Server steht
                 updateView(radarResponse.data);
                 actual_data = radarResponse.data;
                 $scope.amountScaleSteps = radarResponse.data.amountScaleSteps;

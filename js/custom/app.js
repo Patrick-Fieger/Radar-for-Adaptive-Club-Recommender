@@ -3,6 +3,7 @@
 var app = angular.module('radar', ['geolocation']);
 var isMobil = false;
 var actual_data;
+var url = 'localhost:3000/ruleengine'
 
 app.filter('parseInt', function () {
   return function (item) {
@@ -47,7 +48,7 @@ app.controller('AppCtrl', function($scope, $http, geolocation) {
     // Erste initialisierung und funktion um sich die aktuellen Daten vom Server zu holen
     $scope.getData = function(clientInfos) {
         if(clientInfos != null)
-            $http.post('./db/clubs_'+clientInfos.scale+'.json',clientInfos).then(function(radarResponse) { // Behelfslösung bis der Server steht
+            $http.post(url,clientInfos).then(function(radarResponse) { // Behelfslösung bis der Server steht
                 updateView(radarResponse.data);
                 actual_data = radarResponse.data;
                 $scope.amountScaleSteps = radarResponse.data.amountScaleSteps;
